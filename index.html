@@ -2,9 +2,9 @@
 <html lang="en" ng-app="socketiochat">
 <head>
     <meta charset="UTF-8">
-    <title>SocketIOChat Application</title>
-    <link rel="stylesheet" href="static/bootstrap.min.css">
-    <link rel="stylesheet" href="static/style.css">
+    <title>Chat Application</title>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body ng-controller="appController">
 <div class="container" ng-if="name==''">
@@ -17,27 +17,31 @@
 </div>
 <div class="container" id="main-container" ng-if="name!=''">
     <h3>Hello, {{name}}</h3>
+    <button class="btn btn-danger btn-sm logout" ng-click="logout()">Logout</button>
     <div class="row messages-container">
         <div class="col-lg-12">
             <ul class="list list-unstyled messages-list">
-                <li ng-repeat="msg in messages">{{msg}}</li>
+                <li ng-repeat="msg in messages"><strong>{{msg.name}}</strong> : {{msg.message}}</li>
             </ul>
         </div>
     </div>
     <div class="row">
         <div class="col-lg-12">
             <form id="chatForm">
-                <textarea id="message" placeholder="Type message and click send..."></textarea><br />
+                <textarea id="message" placeholder="Type message and click send..."></textarea><br/>
                 <button class="btn btn-primary" type="submit" ng-click="sendMessage()">Send</button>
             </form>
 
         </div>
     </div>
 </div>
-<script src="/socket.io/socket.io.js"></script>
-<script src="static/jquery-1.11.0.min.js"></script>
-<script src="static/bootstrap.min.js"></script>
-<script src="static/angular.min.js"></script>
-<script src="static/app.js"></script>
+<!--<embed src="/static/sounds/beep.mp3" autostart="false" width="0" height="0" id="beep"-->
+       <!--enablejavascript="true">-->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="static/js/jquery-1.11.0.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/angular.min.js"></script>
+    <script src="static/js/angular-cookies.min.js"></script>
+    <script src="static/js/app.js"></script>
 </body>
 </html>

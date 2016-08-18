@@ -17,6 +17,7 @@
 .messages-container{
     background-color:#eeeeee;
     height: 500px;
+    overflow: auto;
 }.messages-container > div{
     padding:0px;
  }
@@ -33,4 +34,7 @@
 }
 .messages-list li:nth-child(even){
     background: #fff;
+}
+.logout{
+    margin: 10px 0px;
 }

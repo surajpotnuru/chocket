@@ -10,7 +10,8 @@
   "dependencies": {
     "express": "*",
     "nodemon": "*",
-    "socket.io": "^1.4.8"
+    "socket.io": "^1.4.8",
+    "mongoose":"*"
   },
   "author": "suraj potnuru",
   "license": "ISC"
