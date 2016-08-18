@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="socketiochat">
+<head>
+    <meta charset="UTF-8">
+    <title>SocketIOChat Application</title>
+    <link rel="stylesheet" href="static/bootstrap.min.css">
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body ng-controller="appController">
+<div class="container" ng-if="name==''">
+    <div class="row">
+        <div class="col-lg-12 name-container">
+            <input type="text" placeholder="Enter your name" class="name">
+        </div>
+    </div>
+</div>
+<div class="container" id="main-container" ng-if="name!=''">
+    <h3>Hello, {{name}}</h3>
+    <div class="row messages-container">
+        <div class="col-lg-12">
+            <ul class="list list-unstyled messages-list">
+                <li ng-repeat="msg in messages">{{msg}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <form id="chatForm">
+                <textarea id="message" placeholder="Type message and click send..."></textarea><br />
+                <button class="btn btn-primary" type="submit">Send</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="static/jquery-1.11.0.min.js"></script>
+<script src="static/bootstrap.min.js"></script>
+<script src="static/angular.min.js"></script>
+<script src="static/app.js"></script>
+</body>
+</html>

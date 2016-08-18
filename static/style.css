@@ -1,0 +1,36 @@
+.name-container{
+    text-align: center;
+    margin: 50px;
+    margin: 50px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+}
+.name-container input{
+    padding: 5px;
+    width: 200px;
+}
+#main-container{
+    margin: 50px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+}
+.messages-container{
+    background-color:#eeeeee;
+    height: 500px;
+}.messages-container > div{
+    padding:0px;
+ }
+#chatForm{
+    text-align: center;
+    margin: 50px;
+}
+#chatForm textarea{
+    width: 500px;
+    height: 100px;
+}
+.messages-list li{
+    padding: 10px;
+}
+.messages-list li:nth-child(even){
+    background: #fff;
+}
