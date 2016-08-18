@@ -11,6 +11,7 @@
     <div class="row">
         <div class="col-lg-12 name-container">
             <input type="text" placeholder="Enter your name" class="name">
+            <button ng-click="startChat()" class="btn btn-primary">Start Chat</button>
         </div>
     </div>
 </div>
@@ -27,7 +28,7 @@
         <div class="col-lg-12">
             <form id="chatForm">
                 <textarea id="message" placeholder="Type message and click send..."></textarea><br />
-                <button class="btn btn-primary" type="submit">Send</button>
+                <button class="btn btn-primary" type="submit" ng-click="sendMessage()">Send</button>
             </form>
 
         </div>

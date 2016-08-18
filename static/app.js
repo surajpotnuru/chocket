@@ -5,22 +5,15 @@ app.controller("appController", ['$scope', function ($scope) {
     $scope.name = "";
     var socket = io();
 
-    setTimeout(function () {
-        $('.name').focus(function () {
-            $(this).keyup(function (e) {
-                if(e.keyCode == 13){
-                    $scope.name = $(this).val();
-                    $scope.$apply();
-                }
-            });
-        });
-    }, 0.1);
+    $scope.startChat = function(){
+        $scope.name = $('.name').val();
+        $scope.$apply();
+    };
 
-    $("#chatForm").submit(function () {
+    $scope.sendMessage = function () {
         socket.emit("chat_message", $("#message").val());
         $("#message").val('');
-        return false;
-    });
+    };
     socket.on("chat_message", function (msg) {
         $scope.messages.push(msg);
         $scope.$apply();
